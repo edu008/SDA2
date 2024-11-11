@@ -30,4 +30,4 @@ def delete_tax_endpoint(TTID):
     return jsonify(result), 200 if "message" in result else 404
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5002)
+    app.run(host='0.0.0.0', port=5005)

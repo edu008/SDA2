@@ -2,3 +2,4 @@ mariadb==1.1.10
 Flask
 Flask-SQLAlchemy
 requests
+boto3

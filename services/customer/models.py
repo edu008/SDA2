@@ -8,7 +8,7 @@ def get_db_connection():
             user="root",
             password="example",
             host="localhost",
-            port=3306,
+            port=3307,
             database="customer"
         )
         cur = conn.cursor()

@@ -1,0 +1,8 @@
+Get-Content ./Databases/customer.sql | docker exec -i customer mariadb -uroot -pexample customer
+Get-Content ./Databases/employee.sql | docker exec -i employee mariadb -uroot -pexample employee
+Get-Content ./Databases/order.sql | docker exec -i order mariadb -uroot -pexample order
+Get-Content ./Databases/product.sql | docker exec -i product mariadb -uroot -pexample product
+Get-Content ./Databases/tax.sql | docker exec -i tax mariadb -uroot -pexample tax
+Get-Content ./Databases/ticket.sql | docker exec -i ticket mariadb -uroot -pexample ticket
+Get-Content ./Databases/action_logs.sql | docker exec -i action_logs mariadb -uroot -pexample action_logs
+

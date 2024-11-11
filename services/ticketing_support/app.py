@@ -88,4 +88,4 @@ def delete_ticket_type_endpoint(type_id):
     return jsonify(result), 200 if "message" in result else 404
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5001)
+    app.run(host='0.0.0.0', port=5006)

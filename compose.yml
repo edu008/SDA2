@@ -1,15 +1,90 @@
 version: "3.1"
 
 services:
-  simap-ver5:
+  # Existing MariaDB containers
+  customer_db:
     image: mariadb
-    container_name: sda2_database
+    container_name: customer
     restart: always
     ports:
-      - 3306:3306
+      - 3307:3306
     environment:
-      MARIADB_DATABASE: sda2_database
+      MARIADB_DATABASE: customer
       MARIADB_ROOT_PASSWORD: example
+    volumes:
+      - ./Databases:/docker-entrypoint-initdb.d
+
+  employee_db:
+    image: mariadb
+    container_name: employee
+    restart: always
+    ports:
+      - 3308:3306
+    environment:
+      MARIADB_DATABASE: employee
+      MARIADB_ROOT_PASSWORD: example
+    volumes:
+      - ./Databases:/docker-entrypoint-initdb.d
+
+  order_db:
+    image: mariadb
+    container_name: order
+    restart: always
+    ports:
+      - 3309:3306
+    environment:
+      MARIADB_DATABASE: order
+      MARIADB_ROOT_PASSWORD: example
+    volumes:
+      - ./Databases:/docker-entrypoint-initdb.d
+
+  product_db:
+    image: mariadb
+    container_name: product
+    restart: always
+    ports:
+      - 3310:3306
+    environment:
+      MARIADB_DATABASE: product
+      MARIADB_ROOT_PASSWORD: example
+    volumes:
+      - ./Databases:/docker-entrypoint-initdb.d
+
+  tax_db:
+    image: mariadb
+    container_name: tax
+    restart: always
+    ports:
+      - 3311:3306
+    environment:
+      MARIADB_DATABASE: tax
+      MARIADB_ROOT_PASSWORD: example
+    volumes:
+      - ./Databases:/docker-entrypoint-initdb.d
+
+  ticket_db:
+    image: mariadb
+    container_name: ticket
+    restart: always
+    ports:
+      - 3312:3306
+    environment:
+      MARIADB_DATABASE: ticket
+      MARIADB_ROOT_PASSWORD: example
+    volumes:
+      - ./Databases:/docker-entrypoint-initdb.d
+
+  logs:
+    image: mariadb
+    container_name: action_logs
+    restart: always
+    ports:
+      - 3313:3306
+    environment:
+      MARIADB_DATABASE: action_logs
+      MARIADB_ROOT_PASSWORD: example
+    volumes:
+      - ./Databases:/docker-entrypoint-initdb.d
 
   adminer:
     image: adminer
@@ -17,3 +92,4 @@ services:
     restart: always
     ports:
       - 8080:8080
+

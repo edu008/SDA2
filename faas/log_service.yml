@@ -1,0 +1,14 @@
+provider:
+  name: openfaas
+  gateway: http://localhost:8080  # Local gateway URL
+
+functions:
+  log_service:
+    lang: python3
+    handler: ./faas/log_service
+    image: log_service:latest
+    environment:
+      LOG_DB_HOST: "action_logs"
+      LOG_DB_USER: "root"
+      LOG_DB_PASSWORD: "example"
+      LOG_DB_PORT: "3306"
