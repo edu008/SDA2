@@ -1,7 +1,7 @@
 import mariadb
 import sys
 
-# Datenbankverbindung herstellen
+# Establish database connection
 def get_db_connection():
     try:
         conn = mariadb.connect(
@@ -9,7 +9,7 @@ def get_db_connection():
             password="example",
             host="localhost",
             port=3306,
-            database="customer"
+            database="order"
         )
         cur = conn.cursor()
         return conn, cur
@@ -17,64 +17,67 @@ def get_db_connection():
         print(f"Error connecting to MariaDB Platform: {e}")
         sys.exit(1)
 
-
-# Funktionen für CRUD-Operationen
-
-def create_customer(name, email):
+# CRUD operations for the `orders` table
+def create_order(OTID, stock_amount, product_id):
     conn, cur = get_db_connection()
     try:
         cur.execute(
-            "INSERT INTO customer_info (first_name, email) VALUES (?, ?)",
-            (name, email)
+            "INSERT INTO orders (OTID, stock_amount, product_id) VALUES (?, ?, ?)",
+            (OTID, stock_amount, product_id)
         )
         conn.commit()
-        return {"message": "Customer created successfully"}
+        return {"message": "Order created successfully"}
     except mariadb.Error as e:
         return {"error": str(e)}
     finally:
         cur.close()
         conn.close()
 
-def get_customer(customer_id):
+def get_order(OID):
     conn, cur = get_db_connection()
     try:
-        cur.execute("SELECT customer_id, first_name, email FROM customer_info WHERE customer_id = ?", (customer_id,))
+        cur.execute("SELECT OID, OTID, stock_amount, product_id FROM orders WHERE OID = ?", (OID,))
         row = cur.fetchone()
         if row:
-            return {"id": row[0], "name": row[1], "email": row[2]}
+            return {
+                "OID": row[0],
+                "OTID": row[1],
+                "stock_amount": row[2],
+                "product_id": row[3]
+            }
         else:
-            return {"error": "Customer not found"}
+            return {"error": "Order not found"}
     except mariadb.Error as e:
         return {"error": str(e)}
     finally:
         cur.close()
         conn.close()
 
-def update_customer(customer_id, name, email):
+def update_order(OID, OTID, stock_amount, product_id):
     conn, cur = get_db_connection()
     try:
         cur.execute(
-            "UPDATE customer_info SET first_name = ?, email = ? WHERE customer_id = ?",
-            (name, email, customer_id)
+            "UPDATE orders SET OTID = ?, stock_amount = ?, product_id = ? WHERE OID = ?",
+            (OTID, stock_amount, product_id, OID)
         )
         conn.commit()
         if cur.rowcount == 0:
-            return {"error": "Customer not found"}
-        return {"message": "Customer updated successfully"}
+            return {"error": "Order not found"}
+        return {"message": "Order updated successfully"}
     except mariadb.Error as e:
         return {"error": str(e)}
     finally:
         cur.close()
         conn.close()
 
-def delete_customer(customer_id):
+def delete_order(OID):
     conn, cur = get_db_connection()
     try:
-        cur.execute("DELETE FROM customer_info WHERE customer_id = ?", (customer_id,))
+        cur.execute("DELETE FROM orders WHERE OID = ?", (OID,))
         conn.commit()
         if cur.rowcount == 0:
-            return {"error": "Customer not found"}
-        return {"message": "Customer deleted successfully"}
+            return {"error": "Order not found"}
+        return {"message": "Order deleted successfully"}
     except mariadb.Error as e:
         return {"error": str(e)}
     finally:

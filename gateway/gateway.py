@@ -6,12 +6,12 @@ app = Flask(__name__)
 # URLs der Microservices
 SERVICES = {
     "customer": "http://localhost:5001/customer/",
-    "order": "http://localhost:5002/order/",
-    "product": "http://localhost:5003/product/",
+    "employee": "http://localhost:5002/employee/",
+    "order": "http://localhost:5003/order/",
     "payment": "http://localhost:5004/payment/",
-    "employee": "http://localhost:5005/employee/",
-    "ticket": "http://localhost:5006/ticket/",
-    "tax": "http://localhost:5007/tax/"
+    "product": "http://localhost:5005/product/",
+    "tax": "http://localhost:5006/tax/",
+    "ticket": "http://localhost:5007/ticket/"
 }
 
 # Gateway-Routing für alle Microservices
