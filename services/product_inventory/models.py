@@ -9,7 +9,7 @@ def get_db_connection():
             password="example",
             host="localhost",
             port=3310,
-            database="order"  # Adjust if the database name is different
+            database="product"  # Adjust if the database name is different
         )
         cur = conn.cursor()
         return conn, cur

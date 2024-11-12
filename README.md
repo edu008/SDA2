@@ -64,9 +64,10 @@ Each microservice may rely on specific Python dependencies. To maintain consiste
    cd path/to/your/project/SDA2-main
    ```
 
-2. start the venv function
-
-python -m venv venv
+2. Start the virtual environment setup:
+   ```bash
+   python -m venv venv
+   ```
 
 3. Activate the virtual environment (assuming it’s named `venv`):
    - On Windows:
@@ -88,7 +89,7 @@ pip install -r requirements.txt
 
 #### 3. Open Separate Terminals for Each Service
 
-Each microservice needs to run on its own, often in separate terminals with an venv. This separation allows you to monitor logs for each service and manage them individually.
+Each microservice needs to run on its own, often in separate terminals with the virtual environment activated. This separation allows you to monitor logs for each service and manage them individually.
 
 1. Open a new terminal for each microservice.
 2. Ensure the virtual environment is activated in each terminal.
@@ -121,7 +122,7 @@ This command launches the microservice in the current terminal. If everything is
 
 #### 6. Start the Gateway Service
 
-The gateway acts as the API entry point for your microservices. It typically routes requests to the appropriate microservice. befor doing it dont forget the venv
+The gateway acts as the API entry point for your microservices. It typically routes requests to the appropriate microservice. Before starting it, ensure the virtual environment is activated.
 
 1. Open a new terminal.
 2. Navigate to the `gateway` folder:
@@ -149,6 +150,7 @@ In your browser, go to `localhost:8080` to access the database interface.
 
 #### Login Credentials:
 
+for example:
 - **Server**: `customer`
 - **Username**: `root`
 - **Password**: `example`

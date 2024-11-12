@@ -9,7 +9,7 @@ def get_db_connection():
             password="example",
             host="localhost",
             port=3312,
-            database="order"  # Adjust if different
+            database="ticket"  # Adjust if different
         )
         cur = conn.cursor()
         return conn, cur
