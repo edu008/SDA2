@@ -1,3 +1,4 @@
+
 version: "3.1"
 
 services:
@@ -12,7 +13,7 @@ services:
       MARIADB_DATABASE: customer
       MARIADB_ROOT_PASSWORD: example
     volumes:
-      - ./Databases:/docker-entrypoint-initdb.d
+      - ./Databases/customer:/docker-entrypoint-initdb.d
 
   employee_db:
     image: mariadb
@@ -24,7 +25,7 @@ services:
       MARIADB_DATABASE: employee
       MARIADB_ROOT_PASSWORD: example
     volumes:
-      - ./Databases:/docker-entrypoint-initdb.d
+      - ./Databases/employee:/docker-entrypoint-initdb.d
 
   order_db:
     image: mariadb
@@ -36,7 +37,7 @@ services:
       MARIADB_DATABASE: order
       MARIADB_ROOT_PASSWORD: example
     volumes:
-      - ./Databases:/docker-entrypoint-initdb.d
+      - ./Databases/order:/docker-entrypoint-initdb.d
 
   product_db:
     image: mariadb
@@ -48,7 +49,7 @@ services:
       MARIADB_DATABASE: product
       MARIADB_ROOT_PASSWORD: example
     volumes:
-      - ./Databases:/docker-entrypoint-initdb.d
+      - ./Databases/product:/docker-entrypoint-initdb.d
 
   tax_db:
     image: mariadb
@@ -60,7 +61,7 @@ services:
       MARIADB_DATABASE: tax
       MARIADB_ROOT_PASSWORD: example
     volumes:
-      - ./Databases:/docker-entrypoint-initdb.d
+      - ./Databases/tax:/docker-entrypoint-initdb.d
 
   ticket_db:
     image: mariadb
@@ -72,7 +73,7 @@ services:
       MARIADB_DATABASE: ticket
       MARIADB_ROOT_PASSWORD: example
     volumes:
-      - ./Databases:/docker-entrypoint-initdb.d
+      - ./Databases/ticket:/docker-entrypoint-initdb.d
 
   logs:
     image: mariadb
@@ -84,7 +85,7 @@ services:
       MARIADB_DATABASE: action_logs
       MARIADB_ROOT_PASSWORD: example
     volumes:
-      - ./Databases:/docker-entrypoint-initdb.d
+      - ./Databases/logs:/docker-entrypoint-initdb.d
 
   adminer:
     image: adminer
@@ -92,4 +93,3 @@ services:
     restart: always
     ports:
       - 8080:8080
-

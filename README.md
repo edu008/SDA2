@@ -41,7 +41,8 @@ cd path/to/your/project/SDA2
 
 #### Start Docker Compose:
 
-In the project folder, locate the `docker-compose.yml` file. Run the following command to set up the database and services:
+In the project folder, ensure Docker is started, then locate the `docker-compose.yml` file. Run the following command to set up the database and services:
+
 ```bash
 docker compose up -d
 ```
@@ -62,7 +63,12 @@ Each microservice may rely on specific Python dependencies. To maintain consiste
    ```bash
    cd path/to/your/project/SDA2-main
    ```
-2. Activate the virtual environment (assuming it’s named `venv`):
+
+2. start the venv function
+
+python -m venv venv
+
+3. Activate the virtual environment (assuming it’s named `venv`):
    - On Windows:
      ```bash
      .\venv\Scripts\activate
@@ -82,7 +88,7 @@ pip install -r requirements.txt
 
 #### 3. Open Separate Terminals for Each Service
 
-Each microservice needs to run on its own, often in separate terminals. This separation allows you to monitor logs for each service and manage them individually.
+Each microservice needs to run on its own, often in separate terminals with an venv. This separation allows you to monitor logs for each service and manage them individually.
 
 1. Open a new terminal for each microservice.
 2. Ensure the virtual environment is activated in each terminal.
@@ -115,7 +121,7 @@ This command launches the microservice in the current terminal. If everything is
 
 #### 6. Start the Gateway Service
 
-The gateway acts as the API entry point for your microservices. It typically routes requests to the appropriate microservice.
+The gateway acts as the API entry point for your microservices. It typically routes requests to the appropriate microservice. befor doing it dont forget the venv
 
 1. Open a new terminal.
 2. Navigate to the `gateway` folder:
@@ -143,9 +149,10 @@ In your browser, go to `localhost:8080` to access the database interface.
 
 #### Login Credentials:
 
-- **Database**: `customer`
+- **Server**: `customer`
 - **Username**: `root`
 - **Password**: `example`
+- **Database**: `customer`
 
 #### Check Data:
 
