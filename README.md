@@ -35,6 +35,7 @@ git clone https://github.com/edu008/SDA2.git
 ```
 
 My Example:
+
 ![alt text](image.png)
 
 
@@ -46,6 +47,7 @@ cd path/to/your/project/SDA2
 ```
 
 My example:
+
 ![alt text](image-1.png)
 
 ### Step 3: Set Up Docker and Database
@@ -61,6 +63,7 @@ docker compose up -d
 ```
 
 My example:
+
 ![alt text](image-3.png)
 
 #### Load the Database Schema:
