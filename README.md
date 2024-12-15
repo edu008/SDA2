@@ -27,7 +27,7 @@ The main goals of this project are:
 
 #### Clone the Repository (if using Git):
 ```bash
-git clone <repository_url>
+git clone https://github.com/edu008/SDA2.git
 ```
 
 Or, download the project ZIP file and extract it to your preferred directory.
