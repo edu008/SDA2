@@ -52,6 +52,7 @@ My example:
 
 ### Step 3: Set Up Docker and Database
 Before doing the next step, you have to make sure, that the Docker Desktop is running. So, please start the Docker Desktop and make sure it's running:
+
 ![alt text](image-2.png)
 
 #### Start Docker Compose:
