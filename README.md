@@ -27,11 +27,7 @@ The main goals of this project are:
 
 #### Clone the Repository (if using Git) in the prefered path:
 ```bash
-<<<<<<< HEAD
 git clone <repository url>
-=======
-git clone https://github.com/edu008/SDA2.git
->>>>>>> 758051d0d6d9ad3efd348b374c5dc6da210cf5d2
 ```
 
 My Example:
