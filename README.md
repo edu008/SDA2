@@ -25,19 +25,28 @@ The main goals of this project are:
 
 ### Step 2: Download the Project
 
-#### Clone the Repository (if using Git):
+#### Clone the Repository (if using Git) in the prefered path:
 ```bash
-git clone <repository_url>
+git clone <repository url>
 ```
+
+My Example:
+![alt text](image.png)
+
 
 Or, download the project ZIP file and extract it to your preferred directory.
 
-#### Navigate to the Project Folder:
+#### Navigate to the Project Folder and go to the folder "SDA2":
 ```bash
 cd path/to/your/project/SDA2
 ```
 
+My example:
+![alt text](image-1.png)
+
 ### Step 3: Set Up Docker and Database
+Before doing the next step, you have to make sure, that the Docker Desktop is running. So, please start the Docker Desktop and make sure it's running:
+![alt text](image-2.png)
 
 #### Start Docker Compose:
 
@@ -46,6 +55,9 @@ In the project folder, ensure Docker is started, then locate the `docker-compose
 ```bash
 docker compose up -d
 ```
+
+My example:
+![alt text](image-3.png)
 
 #### Load the Database Schema:
 
